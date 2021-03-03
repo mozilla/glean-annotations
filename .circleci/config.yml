@@ -12,8 +12,8 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: scripts/create-api.py > docs/api.json
-          name: Create API
+          command: scripts/create-api.py > api.json
+          name: Build
 
 workflows:
   main:
