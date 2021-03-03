@@ -1,6 +1,7 @@
 version: 2.1
 
 orbs:
+  node: circleci/node@2.0.1
   python: circleci/python@0.2.1
 
 jobs:
@@ -12,10 +13,45 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: scripts/create-api.py > api.json
+          command: mkdir docs && scripts/create-api.py > docs/api.json
           name: Build
+      - persist_to_workspace:
+          root: docs
+          paths:
+            - ./
+
+  docs-deploy:
+    executor:
+      name: node/default
+      tag: "12.16"
+    steps:
+      - checkout
+      - attach_workspace:
+          at: docs
+      - run:
+          name: Disable jekyll builds
+          command: touch docs/.nojekyll
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --prefix=$HOME/.local --silent gh-pages@2.0.1
+            git config user.email "ci-build@mozilla.com"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "b8:0c:2a:0b:ee:7f:52:c1:d8:db:09:d5:96:e8:9b:b2"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist docs
 
 workflows:
-  main:
+  build:
     jobs:
       - build
+      - docs-deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
