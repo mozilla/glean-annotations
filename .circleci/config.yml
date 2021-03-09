@@ -32,6 +32,11 @@ jobs:
           name: Disable jekyll builds
           command: touch docs/.nojekyll
       - run:
+          name: Dummy CircleCI config
+          command: |
+            mkdir docs/.circleci
+            echo -e 'jobs:\n  build:\n    steps:\n      -run: echo' > docs/.circleci/config.yml
+      - run:
           name: Install and configure dependencies
           command: |
             npm install -g --prefix=$HOME/.local --silent gh-pages@2.0.1
