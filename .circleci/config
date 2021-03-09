@@ -1,4 +1,4 @@
 jobs:
   build:
     steps:
-      - run: echo
+      -run: echo
