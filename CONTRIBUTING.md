@@ -38,4 +38,4 @@ That said, there are a couple of points to bear in mind:
    talk about, so don't over-rotate on this: in general, talking about how we use data
    in public forums helps build trust with our community. It's ok to put in links to dashboards
    or other resources which are private (behind SSO), but please mark them as such and prefer
-   public references where they exist, at least as an alternative.
+   public references where they exist.
