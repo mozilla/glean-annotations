@@ -35,7 +35,7 @@ That said, there are a couple of points to bear in mind:
 2. These annotations are in a public repository which is world readable. Avoid putting
    in partner-specific information which is under NDA or anything otherwise sensitive.
    Generally speaking, information on how our software behaves is innocuous and fine to
-   talk about, so don't over-rotate on this: in general, talking about how we use data
+   talk about, so don't over-rotate on this: talking about how we use data
    in public forums helps build trust with our community. It's ok to put in links to dashboards
    or other resources which are private (behind SSO), but please mark them as such and prefer
    public references where they exist.
