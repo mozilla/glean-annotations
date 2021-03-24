@@ -16,7 +16,8 @@ There are two recommended workflows for adding new annotations to this repositor
 
 1. Via the Metric's commentary section in the [Glean Dictionary](https://dictionary.protosaur.dev). This
    will either create a new markdown document for you to put information in or allow you to modify the
-   existing one.
+   existing one. When you're happy with your changes, convert your changes into a pull request. After
+   it is merged, your annotations should appear in the Glean Dictionary within a day.
 2. By directly adding a README.md (or a set of them) to the repository. Be sure to use the same application
    and metric identifiers as used in the Glean Dictionary, or your annotations will not be picked up. If
    you need help with this, [feel free to ask](https://docs.telemetry.mozilla.org/concepts/getting_help.html).
@@ -29,10 +30,12 @@ That said, there are a couple of points to bear in mind:
 1. The people reading your annotation will come from a diverse set of backgrounds: in language,
    culture, experience, and role as Mozillians. Avoid using flowery prose and unnecessary
    jargon. The
-   [guidelines for writing content for docs.telemetry.mozilla.org](https://docs.telemetry.mozilla.org/contributing/style_guide.html) may be helpful reading.
+   [guidelines for writing content for docs.telemetry.mozilla.org](https://docs.telemetry.mozilla.org/contributing/style_guide.html)
+   may be helpful reading.
 2. These annotations are in a public repository which is world readable. Avoid putting
-   in partner-specific information which is under NDA or anything sensitive. Generally speaking,
-   information on how our software behaves is innocuous and fine to talk about, so don't
-   over-rotate on this. It's ok to put in links to dashboards or other resources which are
-   private (behind SSO), but please mark them as such and prefer public references
-   where they exist, at least as an alternative.
+   in partner-specific information which is under NDA or anything otherwise sensitive.
+   Generally speaking, information on how our software behaves is innocuous and fine to
+   talk about, so don't over-rotate on this: in general, talking about how we use data
+   in public forums helps build trust with our community. It's ok to put in links to dashboards
+   or other resources which are private (behind SSO), but please mark them as such and prefer
+   public references where they exist, at least as an alternative.
