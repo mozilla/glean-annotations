@@ -33,9 +33,10 @@ That said, there are a couple of points to bear in mind:
    [guidelines for writing content for docs.telemetry.mozilla.org](https://docs.telemetry.mozilla.org/contributing/style_guide.html)
    may be helpful reading.
 2. These annotations are in a public repository which is world readable. Avoid putting
-   in partner-specific information which is under NDA or anything otherwise sensitive.
+   in partner-specific information which is under NDA, exact values or counts from our
+   data (unless the source is an already-public dataset of dashboard) or anything otherwise sensitive.
    Generally speaking, information on how our software behaves is innocuous and fine to
    talk about, so don't over-rotate on this: talking about how we use data
    in public forums helps build trust with our community. It's ok to put in links to dashboards
-   or other resources which are private (behind SSO), but please mark them as such and prefer
-   public references where they exist.
+   or other resources which are private (behind SSO), but please mark them as such (e.g. by
+   putting `(SSO)` beside the link) and prefer public references where they exist.
