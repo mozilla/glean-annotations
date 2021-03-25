@@ -16,11 +16,14 @@ There are two recommended workflows for adding new annotations to this repositor
 
 1. Via the Metric's commentary section in the [Glean Dictionary](https://dictionary.protosaur.dev). This
    will either create a new markdown document for you to put information in or allow you to modify the
-   existing one. When you're happy with your changes, convert your changes into a pull request. After
-   it is merged, your annotations should appear in the Glean Dictionary within a day.
-2. By directly adding a README.md (or a set of them) to the repository. Be sure to use the same application
-   and metric identifiers as used in the Glean Dictionary, or your annotations will not be picked up. If
-   you need help with this, [feel free to ask](https://docs.telemetry.mozilla.org/concepts/getting_help.html).
+   existing one. When you're happy with your changes, convert your changes into a pull request.
+2. By directly adding a README.md (or a set of them) to the repository and making a pull request.
+   Be sure to use the same application and metric identifiers as used in the Glean Dictionary, or your
+   annotations will not be picked up. If you need help with this,
+   [feel free to ask](https://docs.telemetry.mozilla.org/concepts/getting_help.html).
+
+Someone from the Data organization should review your pull request within a couple of days.
+After it is merged, your annotations should appear in the Glean Dictionary shortly thereafter.
 
 At the moment, there are no strong guidelines on what content should be in an annotations file. Include
 whatever you think might be helpful to someone looking at a metric in the context of an analysis.
