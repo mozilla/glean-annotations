@@ -26,7 +26,7 @@ Someone from the Data organization should review your pull request within a coup
 After it is merged, your annotations should appear in the Glean Dictionary shortly thereafter.
 
 At the moment, there are no strong guidelines on what content should be in an annotations file. Include
-whatever you think might be helpful to someone looking at a metric in the context of an analysis.
+whatever you think might be helpful to someone looking at a metric in the context of an analysis. Try to think about information that could save other people time when using the metric. Links to SQL queries or notebooks, tips for handling or interpreting missing data, or other difficulties you have encountered in handling the metric during analysis are some examples.
 
 That said, there are a couple of points to bear in mind:
 
