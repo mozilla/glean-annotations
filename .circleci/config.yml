@@ -13,7 +13,7 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: mkdir docs && scripts/create-api.py > docs/api.json
+          command: scripts/create-api.py > docs/api.json
           name: Build
       - persist_to_workspace:
           root: docs
