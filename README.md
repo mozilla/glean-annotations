@@ -26,5 +26,3 @@ scripts/create-api.py > api.json
 ```
 
 This will create a JSON file which should be the same as the published set of annotations above.
-
-[virtualenv]: https://virtualenv.pypa.io/en/latest/
