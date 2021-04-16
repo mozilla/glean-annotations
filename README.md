@@ -22,7 +22,7 @@ pip install -r requirements.txt
 After creating activating a virtual environment and installing the dependencies, run:
 
 ```bash
-scripts/create-api.py > api.json
+./scripts/create-api.py > api.json
 ```
 
 This will create a JSON file which should be the same as the published set of annotations above.
