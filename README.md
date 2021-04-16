@@ -6,6 +6,23 @@ This repository stores user-defined annotations against glean metrics: both thos
 
 The published set of annotations is available at: https://mozilla.github.io/glean-annotations/api.json
 
+[android-components]: https://github.com/mozilla-mobile/android-components
+
 ## Local development
 
-[android-components]: https://github.com/mozilla-mobile/android-components
+In general, the idea behind this repository is that most people will edit annotations from the Glean Dictionary.
+However, if you want to do local development the recommended setup process is to create a virtual environment
+and install the dependencies inside it. This requires a recent version of python (3.7+):
+
+```bash
+python3 -m venv venv/
+source venv/bin/activate
+pip install -r requirements.txt
+
+After creating activating a virtual environment and installing the dependencies, run:
+
+```bash
+./scripts/create-api.py > api.json
+```
+
+This will create a JSON file which should be the same as the published set of annotations above.
