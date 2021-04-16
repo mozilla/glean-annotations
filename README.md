@@ -12,14 +12,12 @@ The published set of annotations is available at: https://mozilla.github.io/glea
 
 In general, the idea behind this repository is that most people will edit annotations from the Glean Dictionary.
 However, if you want to do local development the recommended setup process is to create a virtual environment
-and install the dependencies inside it. This requires a recent version of python (3.7+) as well as
-[virtualenv]:
+and install the dependencies inside it. This requires a recent version of python (3.7+):
 
 ```bash
-virtualenv -p python3 venv
-venv/bin/activate
+python3 -m venv venv/
+source venv/bin/activate
 pip install -r requirements.txt
-```
 
 After creating activating a virtual environment and installing the dependencies, run:
 
