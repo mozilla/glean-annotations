@@ -18,6 +18,7 @@ and install the dependencies inside it. This requires a recent version of python
 python3 -m venv venv/
 source venv/bin/activate
 pip install -r requirements.txt
+```
 
 After creating activating a virtual environment and installing the dependencies, run:
 
