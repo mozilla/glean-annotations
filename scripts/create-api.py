@@ -19,7 +19,7 @@ def read_annotation(filename):
     annotation = {"content": annotation_md.content}
     for key in ["component", "features", "warning"]:
         if annotation_md.get(key):
-            annotation.update({key: annotation_md[key]})
+            annotation[key] = annotation_md[key]
 
     return annotation
 
