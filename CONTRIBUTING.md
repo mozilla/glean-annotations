@@ -42,4 +42,13 @@ That said, there are a couple of points to bear in mind:
    talk about, so don't over-rotate on this: talking about how we use data
    in public forums helps build trust with our community. It's ok to put in links to dashboards
    or other resources which are private (behind SSO), but please mark them as such (e.g. by
-   putting `(SSO)` beside the link) and prefer public references where they exist.
+   putting `(SSO)` or the lock emoji 🔒 beside the link if not one of our automatically-linkified URLs, see below)
+   and prefer public references where they exist.
+
+### Automatically linkified URLs
+
+To save effort when writing annotations, we automatically create pretty URLs to sql.telemetry.mozilla.org.
+There is thus no need to use [markdown link syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
+with these types of urls: simply put in `https://sql.telemetry.mozilla.org/queries/<query number>` and the
+Glean Annotations machinery will take care of creating a pretty link (with a lock icon if the resource
+is private) for you.
