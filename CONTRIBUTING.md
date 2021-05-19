@@ -50,5 +50,4 @@ That said, there are a couple of points to bear in mind:
 To save effort when writing annotations, we automatically create pretty URLs to sql.telemetry.mozilla.org.
 There is thus no need to use [markdown link syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
 with these types of urls: simply put in `https://sql.telemetry.mozilla.org/queries/<query number>` and the
-Glean Annotations machinery will take care of creating a pretty link (with a lock icon if the resource
-is private) for you.
+Glean Annotations machinery will take care of creating a pretty link (with a lock icon) for you.
