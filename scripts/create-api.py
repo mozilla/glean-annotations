@@ -8,6 +8,10 @@ from collections import defaultdict
 
 
 ANNOTATIONS_DIR = os.path.join(os.path.dirname(__file__), "..", "annotations")
+STMO_QUERIES_RE = [
+    re.compile("(https://sql.telemetry.mozilla.org/queries/([0-9]+)[^\s\.]*)"),
+    re.compile("(https://sql.telemetry.mozilla.org/dashboard/([A-z\-]+)[^\s\.]*)"),
+]
 
 data = defaultdict(lambda: defaultdict(lambda: {}))
 
@@ -21,12 +25,8 @@ def linkify(text):
     This saves effort when writing annotations. Currently only handles
     STMO URLs
     """
-    for stmo_pattern in [
-        "(https://sql.telemetry.mozilla.org/queries/([0-9]+)[^\s\.]*)",
-        "(https://sql.telemetry.mozilla.org/dashboard/([A-z\-]+)[^\s\.]*)",
-    ]:
-        text = re.sub(
-            stmo_pattern,
+    for stmo_pattern in STMO_QUERIES_RE:
+        text = stmo_pattern.sub(
             r"[STMO#\2](\1)🔒",
             text,
         )
