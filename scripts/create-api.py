@@ -22,8 +22,8 @@ def linkify(text):
     STMO URLs
     """
     for stmo_pattern in [
-        "(https://sql.telemetry.mozilla.org/queries/([0-9]+)[^\s]*)",
-        "(https://sql.telemetry.mozilla.org/dashboard/([A-z\-]+)[^\s]*)",
+        "(https://sql.telemetry.mozilla.org/queries/([0-9]+)[^\s\.]*)",
+        "(https://sql.telemetry.mozilla.org/dashboard/([A-z\-]+)[^\s\.]*)",
     ]:
         text = re.sub(
             stmo_pattern,
