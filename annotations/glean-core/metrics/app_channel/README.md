@@ -11,3 +11,4 @@ This will appear in channel-based analyses as a seasonal population shift with a
 On Firefox Desktop versions 90 and later this represents the channel the profile asks for updates on.
 This means that RC builds served to beta-channel profiles will still report
 "beta" even though they were built with the release build configuration.
+For more details, see [bug 1710664](https://bugzilla.mozilla.org/show_bug.cgi?id=1710664).
