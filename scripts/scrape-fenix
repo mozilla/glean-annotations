@@ -1,0 +1,179 @@
+#!/usr/bin/env python
+
+"""
+Toolkit for scraping GitHub feature labels from Fenix data reviews and using
+them to create a preliminary set of metric annotations.
+
+Usage:
+
+./scripts/update_metric_labels
+
+This is intended as a stopgap until we can incorporate this information directly
+into Fenix itself. See:
+
+https://docs.google.com/document/d/1K-Hl_ZWRvVzqBAGzdXb_oQY52D-D5YDxorYmzyzfxuw/edit#
+"""
+
+import os
+import re
+from pathlib import Path
+
+import click
+import frontmatter
+import urllib
+import requests
+import yaml
+
+from constants import ANNOTATIONS_DIR
+
+
+FENIX_ROOT = Path(ANNOTATIONS_DIR) / "fenix"
+FENIX_METADATA = FENIX_ROOT / "metadata.yaml"
+FENIX_METRICS_URL = "https://probeinfo.telemetry.mozilla.org/glean/fenix/metrics"
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+STUB_COMMENTARY = """
+This is a stub commentary for the `{}` metric: please feel free to edit (read the
+[contributing guidelines](https://github.com/mozilla/glean-annotations/blob/main/CONTRIBUTING.md)
+if you haven't done this before)
+"""
+
+
+def get_issue(number):
+    return requests.get(
+        f"https://api.github.com/repos/mozilla-mobile/fenix/issues/{number}",
+        headers={"Authorization": "token %s" % GITHUB_TOKEN},
+    ).json()
+
+
+def get_feature_map():
+    fenix_metrics = requests.get(FENIX_METRICS_URL).json()
+    issue_map = {}
+    for metric_name, metric in fenix_metrics.items():
+        raw_bugs = metric["history"][-1]["bugs"]
+        fenix_issues = [
+            re.sub(r".*/issues/([0-9]+)", r"\1", bug)
+            for bug in raw_bugs
+            if "mozilla-mobile/fenix/issues" in str(bug)
+        ]
+        if fenix_issues:
+            issue_map[metric_name] = fenix_issues
+
+    issue_cache = {}
+    feature_map = {}
+    for metric, issue_numbers in issue_map.items():
+        features = []
+        for issue_number in issue_numbers:
+            if not issue_cache.get(issue_number):
+                issue = get_issue(issue_number)
+                label_names = [
+                    label["name"].replace("Feature:", "")
+                    for label in issue["labels"]
+                    if label["name"].startswith("Feature:")
+                ]
+                issue_cache[issue_number] = label_names
+            features.extend(issue_cache[issue_number])
+        feature_map[metric] = features
+
+    return feature_map
+
+
+def update_annotation(metric, features, overwrite_existing):
+    features = set(features)
+    try:
+        # the telemetry feature is not what we're tracking
+        features.remove("Telemetry")
+    except KeyError:
+        pass
+    if len(features):
+        annotation_dir = FENIX_ROOT / "metrics" / metric
+        annotation_filename = annotation_dir / "README.md"
+        if annotation_filename.exists():
+            annotation_md = frontmatter.load(annotation_filename)
+            content = annotation_md.content
+            metadata = annotation_md.metadata
+            if not overwrite_existing and metadata.get("labels"):
+                # if the frontmatter already has labels defined, let's not update
+                # unless specifically asked to
+                return
+        else:
+            # no metric file exists, create a stub one
+            content = STUB_COMMENTARY.format(metric)
+            metadata = {}
+
+        metadata.update({"labels": sorted(features)})
+        # metric file already exists, just update the frontmatter and re-save
+        annotation_dir.mkdir(exist_ok=True)
+        open(annotation_filename, "w").write(
+            f"---\n{yaml.dump(metadata)}---\n{content}\n"
+        )
+
+
+@click.group()
+def cli():
+    pass
+
+
+@cli.command()
+def update_label_definitions():
+    """
+    Scrapes GitHub labels for Fenix
+
+    Find all labels marked "Feature:" and put them into metadata.yaml
+    """
+    labels = requests.get(
+        "https://api.github.com/repos/mozilla-mobile/fenix/labels?per_page=100"
+    ).json()
+    feature_map = {}
+    for label in labels:
+        if label["name"].startswith("Feature:"):
+            abbreviated_label = label["name"].replace("Feature:", "")
+            url = (
+                "https://github.com/mozilla-mobile/fenix/issues?q="
+                + urllib.parse.quote_plus(f"label:{label['name']}")
+            )
+            label_description = (
+                (label["description"].strip() + ". ")
+                if len(label["description"])
+                else ""
+            )
+            feature_map[
+                abbreviated_label
+            ] = f"{label_description}Corresponds to the [{label['name']}]({url}) label on GitHub."
+
+    open(FENIX_METADATA, "w").write(yaml.dump({"labels": feature_map}))
+
+
+@cli.command()
+@click.argument("output")
+def scrape_metric_feature_map(output):
+    """
+    Gets a feature map of metrics to feature labels via scraping
+
+    This command is intended mainly for debugging. Generally one would just run
+    update-metric-labels.
+    """
+    if not GITHUB_TOKEN:
+        raise click.ClickException(
+            "Github token required! Set the GITHUB_TOKEN environment variable."
+        )
+
+    open(output, "w").write(yaml.dump(get_feature_map()))
+
+
+@cli.command()
+@click.argument("feature_map_filename", nargs=1, required=False)
+@click.option("--overwrite-existing/--no-overwrite-existing", default=False)
+def update_metric_labels(feature_map_filename, overwrite_existing):
+    """
+    Updates metric labels for Fenix, based on feature map data
+    """
+    if feature_map_filename:
+        feature_map = yaml.safe_load(open(feature_map_filename))
+    else:
+        feature_map = get_feature_map()
+    for metric, features in feature_map.items():
+        update_annotation(metric, features, overwrite_existing)
+
+
+if __name__ == "__main__":
+    cli(obj={})
