@@ -6,7 +6,7 @@ them to create a preliminary set of metric annotations.
 
 Usage:
 
-./scripts/update_metric_labels
+./scripts/scrape-fenix
 
 This is intended as a stopgap until we can incorporate this information directly
 into Fenix itself. See:
