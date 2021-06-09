@@ -1,0 +1,4 @@
+[build]
+command = "scripts/create-api.py > docs/api.json"
+environment = { PYTHON_VERSION = "3.8" }
+publish = "docs"
