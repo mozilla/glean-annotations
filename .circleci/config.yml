@@ -2,21 +2,23 @@ version: 2.1
 
 orbs:
   node: circleci/node@2.0.1
-  python: circleci/python@0.2.1
+  python: circleci/python@1.4.0
 
 jobs:
   build:
     executor: python/default
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
+      - python/install-packages:
+          pkg-manager: pip
       - run:
-          command: scripts/create-api.py > docs/api.json
-          name: Build
+          command: mkdocs build
+          name: Build docs
+      - run:
+          command: scripts/create-api.py > site/api.json
+          name: Create API
       - persist_to_workspace:
-          root: docs
+          root: site
           paths:
             - ./
 
@@ -27,15 +29,15 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: docs
+          at: site
       - run:
           name: Disable jekyll builds
-          command: touch docs/.nojekyll
+          command: touch site/.nojekyll
       - run:
           name: Dummy CircleCI config
           command: |
-            mkdir docs/.circleci
-            echo -e 'jobs:\n  build:\n    steps:\n      -run: echo' > docs/.circleci/config.yml
+            mkdir site/.circleci
+            echo -e 'jobs:\n  build:\n    steps:\n      -run: echo' > site/.circleci/config.yml
       - run:
           name: Install and configure dependencies
           command: |
@@ -46,8 +48,8 @@ jobs:
           fingerprints:
             - "b8:0c:2a:0b:ee:7f:52:c1:d8:db:09:d5:96:e8:9b:b2"
       - run:
-          name: Deploy docs to gh-pages branch
-          command: gh-pages --dotfiles --message "[ci skip] Updates" --dist docs
+          name: Deploy site to gh-pages branch
+          command: gh-pages --dotfiles --message "[ci skip] Updates" --dist site
 
 workflows:
   build:

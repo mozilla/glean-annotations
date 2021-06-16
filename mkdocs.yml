@@ -1,0 +1,23 @@
+site_name: Glean Annotations
+site_description: Reviewed Annotations on Glean-based Telemetry
+site_author: Mozilla
+site_url: https://mozilla.github.io/glean-annotations/
+
+repo_url: https://github.com/mozilla/glean-annotations/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.expand
+  palette:
+    primary: teal
+
+plugins:
+  - search
+  - awesome-pages
+
+nav:
+  - Home: index.md
+  - Contributing:
+      - contributing.md

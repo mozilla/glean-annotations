@@ -1,3 +1,7 @@
 click
+markdown-include
+mkdocs
+mkdocs-material
+mkdocs-awesome-pages-plugin
 python-frontmatter
 requests

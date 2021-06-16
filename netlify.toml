@@ -1,4 +1,8 @@
 [build]
-command = "scripts/create-api.py > docs/api.json"
+command = """
+    set -e
+    mkdocs build
+    scripts/create-api.py > site/api.json
+"""
 environment = { PYTHON_VERSION = "3.8" }
-publish = "docs"
+publish = "site"
