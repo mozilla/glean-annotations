@@ -4,7 +4,7 @@ This repository stores user-defined annotations against product metrics at Mozil
 
 These annotations are published as an API at this site: [api.json](api.json).
 
-For information on how to contribute annotations, see [contributing](./contributing.md).
+For information on how to contribute annotations, see [contributing](./contributing/index.md).
 
 [android-components]: https://github.com/mozilla-mobile/android-components
 [glean sdk]: https://mozilla.github.io/glean
