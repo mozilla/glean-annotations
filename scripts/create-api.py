@@ -36,24 +36,23 @@ def linkify(text):
     return text
 
 
-def read_annotation(filename, valid_labels):
+def read_annotation(filename, valid_tags):
     annotation_md = frontmatter.load(filename)
 
     annotation = {"content": linkify(annotation_md.content)}
-    for key in ["component", "features", "warning"]:
+    for key in ["component", "tags", "warning"]:
         if annotation_md.get(key):
             annotation[key] = annotation_md[key]
 
-    labels = annotation_md.get("labels")
-    if labels:
-        invalid_labels = [label for label in labels if label not in valid_labels]
-        if invalid_labels:
+    tags = annotation_md.get("tags")
+    if tags:
+        invalid_tags = [tag for tag in tags if tag not in valid_tags]
+        if invalid_tags:
             sys.stderr.write(
-                f"Invalid labels found in {annotation_filename}: {invalid_labels}; "
+                f"Invalid tags found in {annotation_filename}: {invalid_tags}; "
                 f" if these should be accepted values, update annotations/{app}/metadata.yaml"
             )
             sys.exit(1)
-        annotation["labels"] = labels
 
     return annotation
 
@@ -68,11 +67,11 @@ for app in apps:
         pass
 
     app_dir = os.path.join(ANNOTATIONS_DIR, app)
-    valid_labels = []
+    valid_tags = []
     try:
         metadata = yaml.load(open(os.path.join(app_dir, "metadata.yaml")))
         data[app].update(metadata)
-        valid_labels = metadata.get("labels", []).keys()
+        valid_tags = metadata.get("tags", []).keys()
     except:
         pass
     for annotation_type in ("metrics", "pings"):
@@ -84,7 +83,7 @@ for app in apps:
         annotation_ids = os.listdir(annotation_dir)
         for annotation_id in annotation_ids:
             data[app][annotation_type][annotation_id] = read_annotation(
-                os.path.join(annotation_dir, annotation_id, "README.md"), valid_labels
+                os.path.join(annotation_dir, annotation_id, "README.md"), valid_tags
             )
 
 print(json.dumps(data))

@@ -1,7 +1,8 @@
 ---
-labels:
-- ErrorMessages
+tags:
+  - ErrorMessages
 ---
+
 This is a stub commentary for the `error_page.visited_error` metric: please feel free to edit (read the
 [contributing guidelines](https://github.com/mozilla/glean-annotations/blob/main/CONTRIBUTING.md)
 if you haven't done this before)

@@ -1,7 +1,8 @@
 ---
-labels:
-- Search
+tags:
+  - Search
 ---
+
 Possible values for search_count 'type':
 
 - `action`: User typed the full query and searched through the toolbar (hit enter)
