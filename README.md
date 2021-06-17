@@ -6,6 +6,8 @@ This repository stores user-defined annotations against glean metrics: both thos
 
 The published set of annotations is available at: https://mozilla.github.io/glean-annotations/api.json
 
+Documentation on how this repository works, as well as contribution information, is available at: https://mozilla.github.io/glean-annotations/
+
 [android-components]: https://github.com/mozilla-mobile/android-components
 
 ## Local development
