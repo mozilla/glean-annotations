@@ -1,5 +1,5 @@
 ---
-labels:
+tags:
   - History
 ---
 
