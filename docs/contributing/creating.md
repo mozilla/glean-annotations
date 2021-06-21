@@ -1,14 +1,4 @@
-# Contributing to the Glean Annotations Repository
-
-Thank you for your interest in contributing to the Glean Annotations. This
-document tries to codify some best practices for contribution to this
-repository.
-
-## Participation guidelines
-
-All communication (on Slack and Matrix, on mailing lists, and in pull requests and issues) is expected to follow the [Mozilla Community Participation Guidelines](https://www.mozilla.org/about/governance/policies/participation/).
-
-## Creating new annotations
+# Creating new annotations
 
 There are two recommended workflows for adding new annotations to this repository:
 
@@ -43,7 +33,7 @@ That said, there are a couple of points to bear in mind:
    putting `(SSO)` or the lock emoji 🔒 beside the link if not one of our automatically-linkified URLs, see below)
    and prefer public references where they exist.
 
-### Automatically linkified URLs
+## Automatically linkified URLs
 
 To save effort when writing annotations, we automatically create pretty URLs to sql.telemetry.mozilla.org.
 There is thus no need to use [markdown link syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)

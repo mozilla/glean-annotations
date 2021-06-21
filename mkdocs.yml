@@ -20,4 +20,5 @@ plugins:
 nav:
   - Home: index.md
   - Contributing:
-      - contributing.md
+      - Overview: ./contributing/index.md
+      - ... | contributing/*.md
