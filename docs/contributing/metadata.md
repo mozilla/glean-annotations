@@ -22,7 +22,7 @@ if you haven't done this before)
 To prevent the proliferation of arbitrary and/or inconsistent tag data, we require every tag used to be defined
 in a per-application metadata schema defined in the root of the application's annotations
 (`annotations/<application name>/metadata.yaml`).
-Here's the beginning of one we created for the Fenix, based off their feature labels:
+Here's the beginning of one we created for Fenix, based off their feature labels:
 
 ```yaml
 tags:
