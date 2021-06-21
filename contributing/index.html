@@ -20,7 +20,7 @@
     
     
       
-        <title>Contributing to the Glean Annotations Repository - Glean Annotations</title>
+        <title>Overview - Glean Annotations</title>
       
     
     
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Contributing to the Glean Annotations Repository
+              Overview
             
           </span>
         </div>
@@ -295,60 +295,61 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Contributing to the Glean Annotations Repository
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Contributing to the Glean Annotations Repository
+        Overview
       </a>
       
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    </li>
+  
+
+          
+            
   
   
   
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <li class="md-nav__item md-nav__item--nested">
       
-        <li class="md-nav__item">
-  <a href="#participation-guidelines" class="md-nav__link">
-    Participation guidelines
-  </a>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#creating-new-annotations" class="md-nav__link">
-    Creating new annotations
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating new annotations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#automatically-linkified-urls" class="md-nav__link">
-    Automatically linkified URLs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" data-md-state="indeterminate" type="checkbox" id="__nav_2_2" checked>
       
-    </ul>
+      <label class="md-nav__link" for="__nav_2_2">
+        Contributing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Contributing" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
   
-</nav>
-      
+  
+  
+    <li class="md-nav__item">
+      <a href="creating/" class="md-nav__link">
+        Creating new annotations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="metadata/" class="md-nav__link">
+        Adding metadata
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -378,41 +379,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#participation-guidelines" class="md-nav__link">
-    Participation guidelines
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creating-new-annotations" class="md-nav__link">
-    Creating new annotations
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating new annotations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#automatically-linkified-urls" class="md-nav__link">
-    Automatically linkified URLs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -423,54 +389,15 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mozilla/glean-annotations/edit/master/docs/contributing.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mozilla/glean-annotations/edit/master/docs/contributing/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
                 <h1 id="contributing-to-the-glean-annotations-repository">Contributing to the Glean Annotations Repository</h1>
-<p>Thank you for your interest in contributing to the Glean Annotations. This
-document tries to codify some best practices for contribution to this
-repository.</p>
-<h2 id="participation-guidelines">Participation guidelines</h2>
-<p>All communication (on Slack and Matrix, on mailing lists, and in pull requests and issues) is expected to follow the <a href="https://www.mozilla.org/about/governance/policies/participation/">Mozilla Community Participation Guidelines</a>.</p>
-<h2 id="creating-new-annotations">Creating new annotations</h2>
-<p>There are two recommended workflows for adding new annotations to this repository:</p>
-<ol>
-<li>Via the Metric's commentary section in the <a href="https://dictionary.protosaur.dev">Glean Dictionary</a>. This
-   will either create a new markdown document for you to put information in or allow you to modify the
-   existing one. When you're happy with your changes, convert your changes into a pull request.</li>
-<li>By directly adding a README.md (or a set of them) to the repository and making a pull request.
-   Be sure to use the same application and metric identifiers as used in the Glean Dictionary, or your
-   annotations will not be picked up. If you need help with this,
-   <a href="https://docs.telemetry.mozilla.org/concepts/getting_help.html">feel free to ask</a>.</li>
-</ol>
-<p>Someone from the Data organization should review your pull request within a couple of days.
-After it is merged, your annotations should appear in the Glean Dictionary shortly thereafter.</p>
-<p>At the moment, there are no strong guidelines on what content should be in an annotations file. Include
-whatever you think might be helpful to someone looking at a metric in the context of an analysis. Try to think about information that could save other people time when using the metric. Links to SQL queries or notebooks, tips for handling or interpreting missing data, or other difficulties you have encountered in handling the metric during analysis are some examples.</p>
-<p>That said, there are a couple of points to bear in mind:</p>
-<ol>
-<li>The people reading your annotation will come from a diverse set of backgrounds: in language,
-   culture, experience, and role as Mozillians. Avoid using flowery prose and unnecessary
-   jargon. The
-   <a href="https://docs.telemetry.mozilla.org/contributing/style_guide.html">guidelines for writing content for docs.telemetry.mozilla.org</a>
-   may be helpful reading.</li>
-<li>These annotations are in a public repository which is world readable. Avoid putting
-   in partner-specific information which is under NDA, exact values or counts from our
-   data (unless the source is an already-public dataset of dashboard) or anything otherwise sensitive.
-   Generally speaking, information on how our software behaves is innocuous and fine to
-   talk about, so don't over-rotate on this: talking about how we use data
-   in public forums helps build trust with our community. It's ok to put in links to dashboards
-   or other resources which are private (behind SSO), but please mark them as such (e.g. by
-   putting <code>(SSO)</code> or the lock emoji 🔒 beside the link if not one of our automatically-linkified URLs, see below)
-   and prefer public references where they exist.</li>
-</ol>
-<h3 id="automatically-linkified-urls">Automatically linkified URLs</h3>
-<p>To save effort when writing annotations, we automatically create pretty URLs to sql.telemetry.mozilla.org.
-There is thus no need to use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links">markdown link syntax</a>
-with these types of urls: simply put in <code>https://sql.telemetry.mozilla.org/queries/&lt;query number&gt;</code> and the
-Glean Annotations machinery will take care of creating a pretty link (with a lock icon) for you.</p>
+<p>Thank you for your interest in contributing to the Glean Annotations! This
+section of the documentation tries to codify some best practices for contribution
+to this repository.</p>
                 
               
               
@@ -504,6 +431,21 @@ Glean Annotations machinery will take care of creating a pretty link (with a loc
           </div>
         </a>
       
+      
+        
+        <a href="creating/" class="md-footer__link md-footer__link--next" aria-label="Next: Creating new annotations" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Creating new annotations
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
