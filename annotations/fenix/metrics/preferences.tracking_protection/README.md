@@ -1,4 +1,5 @@
 ---
+warning: This metric should not be used. See the commentary for details.
 tags:
   - TrackingProtection
 ---
