@@ -2,6 +2,7 @@
 warning: This metric should not be used. See the commentary for details.
 tags:
   - Bookmarks
+  - Settings
 ---
 
 This metric has been replaced by `preferences.bookmarks_suggestion` and should not be used.

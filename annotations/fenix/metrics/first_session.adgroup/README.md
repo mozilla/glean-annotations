@@ -1,6 +1,6 @@
 ---
 tags:
-  - Performance
+  - Telemetry
 ---
 
 This is a stub commentary for the `first_session.adgroup` metric: please feel free to edit (read the
