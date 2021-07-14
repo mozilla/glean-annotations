@@ -1,5 +1,7 @@
 ---
 tags:
+  - Search
+  - Voice
   - Settings
 ---
 

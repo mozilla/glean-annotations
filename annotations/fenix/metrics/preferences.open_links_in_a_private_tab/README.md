@@ -2,6 +2,7 @@
 warning: This metric should not be used. See the commentary for details.
 tags:
   - PrivateBrowsing
+  - Settings
 ---
 
 This metric has been replaced by `preferences.open_links_in_private` and should not be used.
