@@ -2,6 +2,7 @@
 warning: This metric should not be used. See the commentary for details.
 tags:
   - History
+  - Settings
 ---
 
 This metric has been replaced by `preferences.browsing_history_suggestion` and should not be used.
