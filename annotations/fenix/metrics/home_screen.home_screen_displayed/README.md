@@ -1,6 +1,7 @@
 ---
 tags:
   - Settings
+  - MainMenu
 ---
 
 This is a stub commentary for the `{}` metric: please feel free to edit (read the
