@@ -29,3 +29,9 @@ After creating activating a virtual environment and installing the dependencies,
 ```
 
 This will create a JSON file which should be the same as the published set of annotations above.
+
+To exit the virtual environment, use: 
+
+```bash
+deactivate venv
+```
