@@ -99,9 +99,9 @@ mkdocs-awesome-pages-plugin==2.5.0 \
     --hash=sha256:a215eab780757734a84e33dfa3f7d1141e43576d47aadc1b8f869a7463162c69 \
     --hash=sha256:df51e908d64a7f736b4d772e19ce8ddb30c7337e06ac3dd7a29c51c431c5606e
     # via -r requirements.in
-mkdocs-material==7.1.8 \
-    --hash=sha256:08eaf9f77c6d026706397bae2c50d202cfe3a81ef984027b671b4acd365dfc5b \
-    --hash=sha256:e555c66ece5eab7023c4733270dc7627280e707e5082dab278d6a7a4881d2435
+mkdocs-material==7.2.3 \
+    --hash=sha256:039ce80555ba457faa10af993c57e9b6469918c6a5427851dcdd65591cc47fac \
+    --hash=sha256:688f0162e7356aa5d019cf687851f5b24c7002886bd939b8159595cc16966edf
     # via
     #   -r requirements.in
     #   mkdocs-material-extensions
