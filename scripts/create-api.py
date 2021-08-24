@@ -39,7 +39,12 @@ def linkify(text):
 def read_annotation(filename, valid_tags):
     annotation_md = frontmatter.load(filename)
 
-    annotation = {"content": linkify(annotation_md.content)}
+    annotation = {}
+
+    # only specify commentary if we actually have some
+    if annotation_md.content.strip():
+        annotation["commentary"] = linkify(annotation_md.content)
+
     for key in ["component", "tags", "warning"]:
         if annotation_md.get(key):
             annotation[key] = annotation_md[key]
