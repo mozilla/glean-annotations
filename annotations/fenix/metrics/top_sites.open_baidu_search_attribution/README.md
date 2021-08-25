@@ -1,6 +1,7 @@
 ---
 tags:
-  - Tabs
+  - Search
+  - TopSites
 ---
 
 This is a stub commentary for the `top_sites.open_baidu_search_attribution` metric: please feel free to edit (read the
