@@ -1,3 +1,6 @@
+---
+logo: https://raw.githubusercontent.com/mozilla/protocol-assets/main/logos/firefox/browser/logo.svg
+---
 As of this writing, the [Firefox Background Updater](https://firefox-source-docs.mozilla.org/toolkit/mozapps/update/docs/BackgroundUpdates.html) is Windows-only.
 The data it sends is operational and is not designed to answer questions about user behaviour.
 

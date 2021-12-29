@@ -1,4 +1,6 @@
 ---
+featured: true
+logo: https://raw.githubusercontent.com/mozilla/protocol-assets/main/logos/firefox/browser/logo.svg
 warning: >
   Most Firefox Desktop telemetry is still being collected via the legacy Firefox Telemetry
   collection system. A full list of this telemetry is available in the [probe dictionary](https://probes.telemetry.mozilla.org).
