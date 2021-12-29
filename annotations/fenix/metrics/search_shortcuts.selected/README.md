@@ -1,5 +1,0 @@
----
-tags:
-  - Search
-  - Shortcuts
----
