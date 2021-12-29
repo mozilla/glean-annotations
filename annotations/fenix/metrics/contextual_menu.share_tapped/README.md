@@ -1,5 +1,0 @@
----
-tags:
-  - ContextMenu
-  - TextSelection
----

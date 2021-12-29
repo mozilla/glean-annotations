@@ -1,6 +1,0 @@
----
-tags:
-  - Search
-  - Voice
-  - Settings
----
