@@ -1,5 +1,5 @@
 ---
-featured: true
+featured: true # display first on front page of glean dictionary
 logo: https://raw.githubusercontent.com/mozilla/protocol-assets/main/logos/firefox/browser/logo.svg
 warning: >
   Most Firefox Desktop telemetry is still being collected via the legacy Firefox Telemetry
