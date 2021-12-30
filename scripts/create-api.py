@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import copy
 import json
 import os
 import re
@@ -36,25 +37,22 @@ def linkify(text):
     return text
 
 
-def read_annotation(filename, valid_tags):
+def read_annotation(filename, annotation_type, valid_tags=None):
     annotation_md = frontmatter.load(filename)
 
-    annotation = {}
+    # use everything in the YAML frontmatter
+    annotation = copy.copy(annotation_md.metadata)
 
     # only specify commentary if we actually have some
     if annotation_md.content.strip():
         annotation["commentary"] = linkify(annotation_md.content)
 
-    for key in ["component", "tags", "warning"]:
-        if annotation_md.get(key):
-            annotation[key] = annotation_md[key]
-
     tags = annotation_md.get("tags")
-    if tags:
+    if tags and annotation_type != "app":
         invalid_tags = [tag for tag in tags if tag not in valid_tags]
         if invalid_tags:
             sys.stderr.write(
-                f"Invalid tags found in {annotation_filename}: {invalid_tags}; "
+                f"Invalid tags found in {filename}: {invalid_tags}; "
                 f" if these should be accepted values, update annotations/{app}/metadata.yaml"
             )
             sys.exit(1)
@@ -65,7 +63,7 @@ def read_annotation(filename, valid_tags):
 for app in apps:
     try:
         data[app]["app"] = read_annotation(
-            os.path.join(ANNOTATIONS_DIR, app, "README.md"), []
+            os.path.join(ANNOTATIONS_DIR, app, "README.md"), "app"
         )
     except FileNotFoundError:
         # no top-level annotation for this application
@@ -88,7 +86,9 @@ for app in apps:
         annotation_ids = os.listdir(annotation_dir)
         for annotation_id in annotation_ids:
             data[app][annotation_type][annotation_id] = read_annotation(
-                os.path.join(annotation_dir, annotation_id, "README.md"), valid_tags
+                os.path.join(annotation_dir, annotation_id, "README.md"),
+                annotation_type,
+                valid_tags,
             )
 
 print(json.dumps(data))
