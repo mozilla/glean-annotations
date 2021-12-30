@@ -1,3 +1,3 @@
 ---
-logo: https://github.com/mozilla/mozregression/raw/ad85ca7646bf44b2f2312a5cc45d25616f727d73/docs/images/mozregression_logo_128.png
+logo: https://raw.githubusercontent.com/mozilla/mozregression/3b4952893b82dd1901181be93f855907fbb12598/docs/images/mozregression_logo_256.png
 ---
