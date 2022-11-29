@@ -1,12 +1,14 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@2.0.1
-  python: circleci/python@1.4.0
+  node: circleci/node@5.0.3
+  python: circleci/python@2.1.1
 
 jobs:
   build:
-    executor: python/default
+    executor:
+      name: python/default
+      tag: "3.10"
     steps:
       - checkout
       - python/install-packages:
@@ -25,7 +27,7 @@ jobs:
   docs-deploy:
     executor:
       name: node/default
-      tag: "12.16"
+      tag: "18.12"
     steps:
       - checkout
       - attach_workspace:
