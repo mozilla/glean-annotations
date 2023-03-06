@@ -34,10 +34,6 @@ idna==2.10 \
     --hash=sha256:b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6 \
     --hash=sha256:b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0
     # via requests
-importlib-metadata==6.0.0 \
-    --hash=sha256:7efb448ec9a5e313a57655d35aa54cd3e01b7e1fbcf72dce1bf06119420f5bad \
-    --hash=sha256:e354bedeb60efa6affdcc8ae121b73544a7aa74156d047311948f6d711cd378d
-    # via mkdocs
 jinja2==3.0.1 \
     --hash=sha256:1f06f2da51e7b56b8f238affdd6b4e2c61e39598a378cc49345bc1bd42a978a4 \
     --hash=sha256:703f484b47a6af502e743c9122595cc812b0271f661722403114f71a79d0f5a4
@@ -108,9 +104,9 @@ mkdocs-awesome-pages-plugin==2.6.0 \
     --hash=sha256:71cf3438c4ab63e0934f1a5ca14b859d66fba00a70886668f72c25e521ad028f \
     --hash=sha256:822c4a7128d847b07852f5e67d1012eda2705deeba6b966506bfcff188f287d8
     # via -r requirements.in
-mkdocs-material==9.0.8 \
-    --hash=sha256:03f8a2249627efb91a57d9f4a4e298d2d61d6e65fe2a864cc5961dc540bdd540 \
-    --hash=sha256:268e7aab0b8585352400b4e93bfe4efd0ca213005d7bae1a0ec69b7ded205fcd
+mkdocs-material==9.1.1 \
+    --hash=sha256:3b20d4e9ee28b2c276d391eb2c4e599ff8865e6c7dcab8146a7fd9805ca59263 \
+    --hash=sha256:836f0066c9346afc05b1962c146ea097025512bbb607c5f04a38248d7415f165
     # via -r requirements.in
 mkdocs-material-extensions==1.1.1 \
     --hash=sha256:9c003da71e2cc2493d910237448c672e00cefc800d3d6ae93d2fc69979e3bd93 \
@@ -305,7 +301,3 @@ wcmatch==8.2 \
     --hash=sha256:4d54ddb506c90b5a5bba3a96a1cfb0bb07127909e19046a71d689ddfb18c3617 \
     --hash=sha256:9146b1ab9354e0797ef6ef69bc89cb32cb9f46d1b9eeef69c559aeec8f3bffb6
     # via mkdocs-awesome-pages-plugin
-zipp==3.12.0 \
-    --hash=sha256:73efd63936398aac78fd92b6f4865190119d6c91b531532e798977ea8dd402eb \
-    --hash=sha256:9eb0a4c5feab9b08871db0d672745b53450d7f26992fd1e4653aa43345e97b86
-    # via importlib-metadata
