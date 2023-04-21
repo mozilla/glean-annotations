@@ -1,1 +1,3 @@
-<img width="633" alt="Screenshot 2023-04-12 at 10 22 54 PM" src="https://user-images.githubusercontent.com/49305857/231631119-e5ac5059-5710-4278-bf9f-38fa750e92f5.png">
+[Miroboard for message related Glean events](https://miro.com/app/board/uXjVMVLwsq4=/)
+<img width="886" alt="image" src="https://user-images.githubusercontent.com/49305857/233741230-68d62f3c-d941-441b-ab81-c7f8d80f7406.png">
+
