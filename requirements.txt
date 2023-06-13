@@ -128,9 +128,9 @@ pygments==2.14.0 \
     --hash=sha256:b3ed06a9e8ac9a9aae5a6f5dbe78a8a58655d17b43b93c078f094ddc476ae297 \
     --hash=sha256:fa7bd7bd2771287c0de303af8bfdfc731f51bd2c6a47ab69d117138893b82717
     # via mkdocs-material
-pymdown-extensions==9.9.2 \
-    --hash=sha256:c3d804eb4a42b85bafb5f36436342a5ad38df03878bb24db8855a4aa8b08b765 \
-    --hash=sha256:ebb33069bafcb64d5f5988043331d4ea4929325dc678a6bcf247ddfcf96499f8
+pymdown-extensions==10.0 \
+    --hash=sha256:9a77955e63528c2ee98073a1fb3207c1a45607bc74a34ef21acd098f46c3aa8a \
+    --hash=sha256:e6cbe8ace7d8feda30bc4fd6a21a073893a9a0e90c373e92d69ce5b653051f55
     # via mkdocs-material
 pyparsing==2.4.7 \
     --hash=sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1 \
@@ -176,6 +176,7 @@ pyyaml==5.4.1 \
     --hash=sha256:fe69978f3f768926cfa37b867e3843918e012cf83f680806599ddce33c2c68b0
     # via
     #   mkdocs
+    #   pymdown-extensions
     #   python-frontmatter
     #   pyyaml-env-tag
 pyyaml-env-tag==0.1 \
