@@ -1,0 +1,2 @@
+# All the telemetry team can review annotations.
+/annotations/** @mozilla/telemetry
