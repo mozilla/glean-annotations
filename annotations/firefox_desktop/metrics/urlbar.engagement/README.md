@@ -18,4 +18,7 @@
 
 **Answer 4:** `suggest_non_sponsor` is on Firefox 113 and earlier and includes non-sponsored suggestions (a.k.a. "expanded Wikipedia") from both Merino and remote settings. In 114, `suggest_non_sponsor` was replaced with `merino_adm_nonsponsored` and `rs_adm_nonsponsored`. In all cases, "non-sponsored" means expanded Wikipedia.
   `merino_wikipedia` is dynamic Wikipedia. There is no `rs_` version because by their nature these suggestions are provided only by Merino.
-    
+
+**Question 5:** What does `merino_top_picks` mean?
+
+**Answer 5:** In Firefox 114+, it refers to navigational suggestions.
