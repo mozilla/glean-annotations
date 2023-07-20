@@ -22,3 +22,7 @@
 **Question 5:** What does `merino_top_picks` mean?
 
 **Answer 5:** In Firefox 114+, it refers to navigational suggestions.
+
+**Question 6:** How do we identify Dynamic Wikipedia suggestions?
+
+**Answer 6:** Dynamic Wikipedia was recorded as `dynamic_wikipedia` in 113, which is the version that the dynamic Wikipedia experiment targeted. In 114 and later, it's recorded as `merino_wikipedia`. 
