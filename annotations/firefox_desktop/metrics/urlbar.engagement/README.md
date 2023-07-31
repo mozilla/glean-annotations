@@ -26,3 +26,13 @@
 **Question 6:** How do we identify Dynamic Wikipedia suggestions?
 
 **Answer 6:** Dynamic Wikipedia was recorded as `dynamic_wikipedia` in 113, which is the version that the dynamic Wikipedia experiment targeted. In 114 and later, it's recorded as `merino_wikipedia`. 
+
+**Question 7:** How does the search session end for each `engagement_type` value?
+
+**Answer 7:**
+- For `click`, `enter`, `go_button`: the user has selected one of the results displayed in the panel. The panel closes and the selected result page loads.
+- For `drop_go`, `paste_go`: the user has dropped or pasted text into the URLbar
+  and immediately navigated to it (either a URL, or a SERP if the text was interpreted as a search query). The results panel did not open and no results were shown. The `selected_result` type is `input_field`.
+- For `help`: the user has selected "Learn More" from the meatball menu next to one of the results displayed in the panel. The panel closes and a support page loads.
+- For `dismiss`,  `not_interested`, `not_relevant`: the user has selected an option from the meatball menu next to one of the results displayed in the panel. The panel stays open. The affected result is removed from the panel, but the current search string and other results remain in view. The search session has not ended.
+- For `inaccurate_location`, `show_less_frequently`: the user has selected an option from the meatball menu next to one of the results displayed in the panel. The panel stays open, and the current search string and all results remain in view. The search session has not ended.
