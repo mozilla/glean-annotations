@@ -1,0 +1,1 @@
+Application Locale has been added to Glean (in the [`client_info.locale` metric](https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/locale)) as of Firefox v118. See [Bug 1626969](https://bugzilla.mozilla.org/show_bug.cgi?id=1626969) for more information. 
