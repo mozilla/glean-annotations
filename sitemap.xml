@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mozilla.github.io/glean-annotations/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mozilla.github.io/glean-annotations/contributing/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mozilla.github.io/glean-annotations/contributing/creating/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mozilla.github.io/glean-annotations/contributing/metadata/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
