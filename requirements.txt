@@ -140,9 +140,9 @@ python-dateutil==2.8.1 \
     --hash=sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c \
     --hash=sha256:75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a
     # via ghp-import
-python-frontmatter==1.0.0 \
-    --hash=sha256:766ae75f1b301ffc5fe3494339147e0fd80bc3deff3d7590a93991978b579b08 \
-    --hash=sha256:e98152e977225ddafea6f01f40b4b0f1de175766322004c826ca99842d19a7cd
+python-frontmatter==1.1.0 \
+    --hash=sha256:335465556358d9d0e6c98bbeb69b1c969f2a4a21360587b9873bfc3b213407c1 \
+    --hash=sha256:7118d2bd56af9149625745c58c9b51fb67e8d1294a0c76796dafdc72c36e5f6d
     # via -r requirements.in
 pyyaml==5.4.1 \
     --hash=sha256:08682f6b72c722394747bddaf0aa62277e02557c0fd1c42cb853016a38f8dedf \
