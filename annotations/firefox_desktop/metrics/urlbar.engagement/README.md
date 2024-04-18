@@ -40,5 +40,5 @@
 
 | Date       | Note   |
 | ---------- | ------ |
-| 2024-03-19 | The urlbar event telemetry was rolled out worldwide. Initially, it was only enabled in the US. |
+| 2024-03-19 | The urlbar event telemetry was rolled out worldwide. Initially, it was only enabled in the US. You may see a spike in the volume of urlbar events as a result. |
 
