@@ -36,3 +36,9 @@
 - For `help`: the user has selected "Learn More" from the meatball menu next to one of the results displayed in the panel. The panel closes and a support page loads.
 - For `dismiss`,  `not_interested`, `not_relevant`: the user has selected an option from the meatball menu next to one of the results displayed in the panel. The panel stays open. The affected result is removed from the panel, but the current search string and other results remain in view. The search session has not ended.
 - For `inaccurate_location`, `show_less_frequently`: the user has selected an option from the meatball menu next to one of the results displayed in the panel. The panel stays open, and the current search string and all results remain in view. The search session has not ended.
+
+
+| Date       | Note   |
+| ---------- | ------ |
+| 2024-03-19 | The urlbar event telemetry was rolled out worldwide. Initially, it was only enabled in the US. |
+
