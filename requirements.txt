@@ -37,16 +37,19 @@ idna==2.10 \
 importlib-metadata==6.0.0 \
     --hash=sha256:7efb448ec9a5e313a57655d35aa54cd3e01b7e1fbcf72dce1bf06119420f5bad \
     --hash=sha256:e354bedeb60efa6affdcc8ae121b73544a7aa74156d047311948f6d711cd378d
-    # via mkdocs
+    # via
+    #   markdown
+    #   mkdocs
+    #   mkdocs-get-deps
 jinja2==3.1.3 \
     --hash=sha256:7d6d50dd97d52cbc355597bd845fabfbac3f551e1f99619e39a35ce8c370b5fa \
     --hash=sha256:ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90
     # via
     #   mkdocs
     #   mkdocs-material
-markdown==3.3.4 \
-    --hash=sha256:31b5b491868dcc87d6c24b7e3d19a0d730d59d3e46f4eea6430a321bed387a49 \
-    --hash=sha256:96c3ba1261de2f7547b46a00ea8463832c921d3f9d6aba3f255a6f71386db20c
+markdown==3.6 \
+    --hash=sha256:48f276f4d8cfb8ce6527c8f79e2ee29708508bf4d40aa410fbc3b4ee832c850f \
+    --hash=sha256:ed4f41f6daecbeeb96e576ce414c41d2d876daa9a16cb35fa8ed8c2ddfad0224
     # via
     #   mkdocs
     #   mkdocs-material
@@ -92,14 +95,18 @@ markupsafe==2.1.1 \
     --hash=sha256:efc1913fd2ca4f334418481c7e595c00aad186563bbc1ec76067848c7ca0a933 \
     --hash=sha256:f121a1420d4e173a5d96e47e9a0c0dcff965afdf1626d28de1460815f7c4ee7a \
     --hash=sha256:fc7b548b17d238737688817ab67deebb30e8073c95749d55538ed473130ec0c7
-    # via jinja2
+    # via
+    #   jinja2
+    #   mkdocs
 mergedeep==1.3.4 \
     --hash=sha256:0096d52e9dad9939c3d975a774666af186eda617e6ca84df4c94dec30004f2a8 \
     --hash=sha256:70775750742b25c0d8f36c55aed03d24c3384d17c951b3175d898bd778ef0307
-    # via mkdocs
-mkdocs==1.4.2 \
-    --hash=sha256:8947af423a6d0facf41ea1195b8e1e8c85ad94ac95ae307fe11232e0424b11c5 \
-    --hash=sha256:c8856a832c1e56702577023cd64cc5f84948280c1c0fcc6af4cd39006ea6aa8c
+    # via
+    #   mkdocs
+    #   mkdocs-get-deps
+mkdocs==1.6.0 \
+    --hash=sha256:1eb5cb7676b7d89323e62b56235010216319217d4af5ddc543a91beb8d125ea7 \
+    --hash=sha256:a73f735824ef83a4f3bcb7a231dcab23f5a838f88b7efc54a0eef5fbdbc3c512
     # via
     #   -r requirements.in
     #   mkdocs-awesome-pages-plugin
@@ -108,6 +115,10 @@ mkdocs-awesome-pages-plugin==2.9.1 \
     --hash=sha256:be65e36444f5d991f87a90dae37de64e932562f99e362078724c27124834b90a \
     --hash=sha256:faf5241365f94c1f65ef3cad7ea9d6f0e7a436be7f06013c79c4045db0b2eafc
     # via -r requirements.in
+mkdocs-get-deps==0.2.0 \
+    --hash=sha256:162b3d129c7fad9b19abfdcb9c1458a651628e4b1dea628ac68790fb3061c60c \
+    --hash=sha256:2bf11d0b133e77a0dd036abeeb06dec8775e46efa526dc70667d8863eefc6134
+    # via mkdocs
 mkdocs-material==9.1.3 \
     --hash=sha256:0be1b5d76c00efc9b2ecbd2d71014be950351e710f5947f276264878afc82ca0 \
     --hash=sha256:a8d14d03569008afb0f5a5785c253249b5ff038e3a5509f96a393b8596bf5062
@@ -124,6 +135,14 @@ packaging==20.9 \
     --hash=sha256:5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5 \
     --hash=sha256:67714da7f7bc052e064859c05c595155bd1ee9f69f76557e21f051443c20947a
     # via mkdocs
+pathspec==0.12.1 \
+    --hash=sha256:a0d503e138a4c123b27490a4f7beda6a01c6f288df0e4a8b79c7eb0dc7b4cc08 \
+    --hash=sha256:a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712
+    # via mkdocs
+platformdirs==4.2.0 \
+    --hash=sha256:0614df2a2f37e1a662acbd8e2b25b92ccf8632929bc6d43467e17fe89c75e068 \
+    --hash=sha256:ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768
+    # via mkdocs-get-deps
 pygments==2.15.0 \
     --hash=sha256:77a3299119af881904cd5ecd1ac6a66214b6e9bed1f2db16993b54adede64094 \
     --hash=sha256:f7e36cffc4c517fbc252861b9a6e4644ca0e5abadf9a113c72d1358ad09b9500
@@ -176,6 +195,7 @@ pyyaml==5.4.1 \
     --hash=sha256:fe69978f3f768926cfa37b867e3843918e012cf83f680806599ddce33c2c68b0
     # via
     #   mkdocs
+    #   mkdocs-get-deps
     #   pymdown-extensions
     #   python-frontmatter
     #   pyyaml-env-tag
