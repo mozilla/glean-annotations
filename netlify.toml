@@ -4,5 +4,5 @@ command = """
     mkdocs build
     scripts/create-api.py > site/api.json
 """
-environment = { PYTHON_VERSION = "3.8" }
+environment = { PYTHON_VERSION = "3.12" }
 publish = "site"
