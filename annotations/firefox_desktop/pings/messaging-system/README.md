@@ -6,6 +6,13 @@ in the Messaging System and the New Tab Page.
 These pings record impressions and user interactions for messages served by the
 Messaging System.
 
+## Important `client_id` note
+All uses of `client_id` in this documentation refer to [`messaging_system_client_id`](https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_client_id), which is (usually) a copy of 
+[`legacy telemetry client ID`](https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/legacy_telemetry_client_id),
+not the [`Glean client ID`](https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/client_id).
+As a result, when wishing to `JOIN` `messaging_system` and `onboarding` with other tables, it will be necessary to `JOIN` on
+`metrics.uuid.legacy_telemetry_client_id` (or, in Looker, to use `legacy.telemetry.client_id`)
+
 ## Moments page pings
 
 This records when a moments page message has set the user preference for
