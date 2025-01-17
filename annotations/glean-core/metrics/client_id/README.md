@@ -1,0 +1,1 @@
+This metric is no longer sent in the usage reporting ping. See [Bug 1929832](https://bugzilla.mozilla.org/show_bug.cgi?id=1929832).
