@@ -438,6 +438,35 @@ These record the telemetry metrics during the Firefox onboarding experience.
 }
 ```
 
+### Select checkbox/radio button
+
+Messaging surfaces that use the aboutwelcome bundle can render checkboxes and
+radio groups. This is most commonly used in about:welcome and feature callout
+microsurveys. The user's selection is not recorded until a button is clicked
+that "collects" the selection. This means two events are recorded simultaneously.
+The first event would typically be a CLICK event, indicating which button was
+pressed to submit the action, and the second event would be a SELECT_CHECKBOX
+event, indicating which checkboxes/radio buttons were selected. Checkboxes and
+radio buttons must be given unique ids to be distinguished in telemetry.
+
+```ts
+{
+  "experiments": {},
+  "locale": "en-US",
+  "version": "145.0a1",
+  "release_channel": "default",
+  "event": "SELECT_CHECKBOX",
+  "event_context": {
+    "source": "checkbox-1,checkbox-2" | "radio-1",
+    "page": "spotlight" | "about:welcome" | "chrome"
+  },
+  "message_id": "some_message_id",
+  "addon_version": "20221013100028",
+  "client_id": "26288a14-5cc4-d14f-ae0a-bb01ef45be9c",
+  "browser_session_id": "e7e52665-7db3-f348-9918-e93160eb2ef3"
+}
+```
+
 ## Feature Callout pings
 
 Impressions and most interactions in Feature Callouts are handled by the
