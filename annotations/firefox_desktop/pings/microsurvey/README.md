@@ -19,10 +19,10 @@ following is a list of differences:
 - ⚠️ As with the `messaging-system` dataset, `client_id` is not directly
   available. But rather than adding a legacy client id metric like
   `metrics.uuid.messaging_system_client_id`, the ping includes
-  `metrics.uuid.microsurvey_impression_id`. This is an entirely different
-  identifier. It is unique to a session but does not persist across sessions.
-  This means it cannot be joined with other datasets, but it allows funnel
-  analysis within the microsurvey dataset.
+  `metrics.uuid.microsurvey_impression_id`. This works just like a `client_id`,
+  but it is an entirely different identifier. This means it cannot be joined
+  with other datasets unless they also record an `impression_id`. But it still
+  allows funnel analysis _within_ the microsurvey dataset.
 - `metrics.text.event_input_value` contains the user's free write-in response,
   and is only available in the `microsurvey` dataset, not the
   `microsurvey_redacted` dataset. If you need to access these responses, please
@@ -49,7 +49,7 @@ For example:
   "id": "EXAMPLE_SURVEY_MESSAGE",
   "template": "feature_callout",
   "content": {
-    "write_in_microsurvey": true
+    "write_in_microsurvey": true,
     // ...
   }
 }
