@@ -1,14 +1,12 @@
 # Glean Annotations
 
-[![CircleCI](https://circleci.com/gh/mozilla/glean-annotations.svg?style=svg)](https://circleci.com/gh/mozilla/glean-annotations)
+This repository stores user-defined annotations against Glean metrics: both those defined in applications (for example, "fenix" aka "Firefox for Android") as well as libraries like [android-components].
 
-This repository stores user-defined annotations against glean metrics: both those defined in applications (for example, "fenix" aka "Firefox for Android") as well as libraries like [android-components].
+The published set of annotations is available at: <https://mozilla.github.io/glean-annotations/api.json>
 
-The published set of annotations is available at: https://mozilla.github.io/glean-annotations/api.json
+Documentation on how this repository works, as well as contribution information, is available at: <https://mozilla.github.io/glean-annotations/>
 
-Documentation on how this repository works, as well as contribution information, is available at: https://mozilla.github.io/glean-annotations/
-
-[android-components]: https://github.com/mozilla-mobile/android-components
+[android-components]: https://searchfox.org/firefox-main/source/mobile/android/android-components/
 
 ## Local development
 
@@ -30,7 +28,7 @@ After creating activating a virtual environment and installing the dependencies,
 
 This will create a JSON file which should be the same as the published set of annotations above.
 
-To exit the virtual environment, use: 
+To exit the virtual environment, use:
 
 ```bash
 deactivate venv
