@@ -13,8 +13,8 @@ import yaml
 from constants import ANNOTATIONS_DIR
 
 STMO_QUERIES_RE = [
-    re.compile("(https://sql.telemetry.mozilla.org/queries/([0-9]+)[^\s\.]*)"),
-    re.compile("(https://sql.telemetry.mozilla.org/dashboard/([A-z\-]+)[^\s\.]*)"),
+    re.compile(r"(https://sql.telemetry.mozilla.org/queries/([0-9]+)[^\s\.]*)"),
+    re.compile(r"(https://sql.telemetry.mozilla.org/dashboard/([A-z\-]+)[^\s\.]*)"),
 ]
 
 data = defaultdict(lambda: defaultdict(lambda: {}))
